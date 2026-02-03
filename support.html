@@ -1,267 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Support</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0f19" />
+  <title>Support • Mert Alp Apps</title>
+  <meta name="description" content="Support page for apps published by Mert Alp." />
+
   <style>
     :root{
-      --bg:#060712;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.08);
-      --stroke: rgba(255,255,255,.10);
+      --bg:#070A12;
+      --card:#0B1020;
+      --card2:#0E1630;
       --text:#EAF0FF;
-      --muted:#B9C2D9;
-      --muted2:#93A0BF;
-      --accent:#A78BFA;
-      --accent2:#60A5FA;
-      --ok:#34D399;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius: 22px;
+      --muted:#AEB9D6;
+      --line:rgba(255,255,255,.08);
+      --accent:#A78BFA; /* purple */
+      --accent2:#60A5FA; /* blue */
+      --success:#34D399;
+      --shadow: 0 16px 60px rgba(0,0,0,.55);
+      --radius:18px;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
       background:
-        radial-gradient(1100px 600px at 18% 12%, rgba(167,139,250,.22), transparent 55%),
-        radial-gradient(900px 520px at 82% 18%, rgba(96,165,250,.18), transparent 60%),
-        radial-gradient(900px 520px at 48% 88%, rgba(52,211,153,.10), transparent 60%),
-        linear-gradient(180deg, #07081a 0%, var(--bg) 100%);
-      overflow-x:hidden;
+        radial-gradient(1000px 600px at 10% 10%, rgba(167,139,250,.20), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(96,165,250,.18), transparent 55%),
+        radial-gradient(900px 600px at 50% 110%, rgba(52,211,153,.10), transparent 55%),
+        linear-gradient(180deg, #050711 0%, #070A12 35%, #060816 100%);
     }
 
+    a{color:inherit}
     .wrap{
       max-width: 980px;
       margin: 0 auto;
-      padding: 42px 18px 72px;
+      padding: 28px 20px 60px;
     }
 
-    /* Topbar */
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
-      padding: 14px 16px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.04);
-      border-radius: 16px;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 8px 30px rgba(0,0,0,.25);
+      gap:16px;
+      margin-bottom: 18px;
     }
+
     .brand{
-      display:flex; align-items:center; gap:10px;
-      min-width: 180px;
+      display:flex;
+      align-items:center;
+      gap:12px;
     }
-    .brand-badge{
-      width: 34px; height: 34px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(167,139,250,.9), rgba(96,165,250,.9));
-      box-shadow: 0 10px 26px rgba(167,139,250,.18);
+
+    .brand-logo{
+      width:44px;height:44px;
+      border-radius:14px;
+      background: linear-gradient(135deg, rgba(167,139,250,.35), rgba(96,165,250,.25));
+      border:1px solid var(--line);
+      box-shadow: 0 10px 40px rgba(0,0,0,.35);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
     }
-    .brand h3{
-      margin:0;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .3px;
+    .brand-logo svg{opacity:.95}
+
+    .brand-title{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
     }
-    .brand span{
-      display:block;
-      font-size:12px;
-      color: var(--muted2);
-      margin-top:2px;
-    }
+    .brand-title strong{font-size:14px; letter-spacing:.2px;}
+    .brand-title span{font-size:12px; color:var(--muted); margin-top:4px;}
 
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 10px 12px;
+      font-size:12px;
+      padding:10px 12px;
       border-radius: 999px;
-      border: 1px solid var(--stroke);
+      border:1px solid var(--line);
       background: rgba(255,255,255,.04);
       color: var(--muted);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .dot{
-      width: 8px; height: 8px; border-radius: 99px;
-      background: var(--ok);
-      box-shadow: 0 0 0 5px rgba(52,211,153,.10);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
     }
 
-    /* Hero */
-    .hero{
-      margin-top: 18px;
-      padding: 28px 22px;
+    header.hero{
+      margin-top: 10px;
+      padding: 26px;
       border-radius: var(--radius);
-      border: 1px solid var(--stroke);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       box-shadow: var(--shadow);
       position:relative;
       overflow:hidden;
     }
-    .hero:before{
+    header.hero:before{
       content:"";
-      position:absolute; inset:-120px -120px auto auto;
-      width: 320px; height: 320px;
-      background: radial-gradient(circle at 30% 30%, rgba(167,139,250,.35), transparent 60%);
-      filter: blur(6px);
-      transform: rotate(20deg);
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(800px 240px at 20% 0%, rgba(167,139,250,.22), transparent 55%),
+                  radial-gradient(700px 240px at 80% 0%, rgba(96,165,250,.18), transparent 55%);
       pointer-events:none;
     }
+    .hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 860px){
+      .hero-inner{grid-template-columns: 1fr;}
+    }
+
     .hero h1{
-      margin:0;
-      font-size: 34px;
-      letter-spacing: -0.6px;
-      line-height: 1.15;
+      margin:0 0 8px;
+      font-size: 28px;
+      letter-spacing: -0.4px;
     }
     .hero p{
-      margin: 10px 0 0;
+      margin:0;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-      max-width: 64ch;
-    }
-
-    .ctaRow{
-      display:flex; flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.05);
-      color: var(--text);
-      text-decoration:none;
-      font-weight: 650;
-      font-size: 13px;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.07);
-      border-color: rgba(167,139,250,.35);
-    }
-    .btn.primary{
-      border: 1px solid rgba(167,139,250,.45);
-      background: linear-gradient(135deg, rgba(167,139,250,.35), rgba(96,165,250,.25));
-      box-shadow: 0 16px 40px rgba(96,165,250,.10);
-    }
-    .btn small{ color: var(--muted2); font-weight: 600; }
-
-    /* Section */
-    .sectionTitle{
-      margin: 22px 4px 10px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-    }
-    .sectionTitle h2{
-      margin:0;
-      font-size: 16px;
-      color: #DDE6FF;
-      letter-spacing: .2px;
-    }
-    .sectionTitle p{
-      margin:0;
-      font-size: 12px;
-      color: var(--muted2);
-    }
-
-    /* App cards */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 12px;
-    }
-    .card{
-      grid-column: span 12;
-      padding: 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--stroke);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: 0 10px 40px rgba(0,0,0,.35);
-      backdrop-filter: blur(12px);
-      display:flex;
-      gap: 14px;
-      align-items: center;
-    }
-    @media (min-width: 760px){
-      .card{ grid-column: span 6; }
-    }
-
-    .appLogo{
-      width: 58px; height: 58px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 14px 34px rgba(0,0,0,.35);
-      object-fit: cover;
-      background: rgba(255,255,255,.04);
-      flex: 0 0 auto;
-    }
-
-    .appInfo{ flex:1; min-width: 0; }
-    .appInfo h3{
-      margin:0;
-      font-size: 15px;
-      letter-spacing: .2px;
-    }
-    .appInfo p{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.6;
     }
 
-    .actions{
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(7,10,18,.55);
+      box-shadow: 0 14px 50px rgba(0,0,0,.35);
+    }
+
+    .support-card{
+      padding: 18px;
       display:flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 0 0 auto;
-      align-items: stretch;
+      flex-direction:column;
+      justify-content:center;
+      gap: 10px;
+      background: linear-gradient(180deg, rgba(167,139,250,.14), rgba(7,10,18,.55));
     }
-    .mini{
-      padding: 10px 12px;
+
+    .label{
+      font-size:12px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .label .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(52,211,153,.12);
+    }
+
+    .mailto{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
       border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      text-decoration:none;
-      font-weight: 650;
-      font-size: 12px;
-      text-align:center;
-      white-space: nowrap;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      padding: 12px 12px 12px 14px;
     }
-    .mini:hover{
-      transform: translateY(-1px);
+
+    .mailto .addr{
+      font-weight:700;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .mailto .hint{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .mailto-left{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .btns{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      appearance:none;
+      border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
-      border-color: rgba(96,165,250,.35);
-    }
-
-    /* Footer */
-    footer{
-      margin-top: 22px;
-      padding: 18px 8px 0;
-      color: var(--muted2);
+      color: var(--text);
+      padding:10px 12px;
+      border-radius: 12px;
+      text-decoration:none;
       font-size: 12px;
-      text-align:center;
+      font-weight: 600;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      cursor:pointer;
+      user-select:none;
     }
-    footer a{ color: var(--accent); text-decoration:none; }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(167,139,250,.30), rgba(96,165,250,.18));
+      border-color: rgba(167,139,250,.35);
+    }
 
-    /* subtle divider */
-    .divider{
-      height: 1px;
-      margin: 18px 0 6px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+    .grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
+    @media (max-width: 860px){
+      .grid{grid-template-columns: 1fr;}
+    }
+
+    .info{
+      padding: 18px;
+    }
+    .info h2{
+      font-size: 14px;
+      margin: 0 0 8px;
+      letter-spacing: .2px;
+    }
+    .info ul{
+      margin: 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .info li{margin: 6px 0;}
+
+    .footer{
+      margin-top: 18px;
+      padding: 16px 10px 0;
+      color: rgba(174,185,214,.75);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .muted{color: rgba(174,185,214,.75);}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
   </style>
 </head>
 
@@ -270,87 +266,119 @@
 
     <div class="topbar">
       <div class="brand">
-        <div class="brand-badge"></div>
-        <div>
-          <h3>Mert Alp</h3>
-          <span>Support Center</span>
+        <div class="brand-logo" aria-hidden="true">
+          <!-- simple premium-ish mark -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l2.3 6.5H21l-5.5 4 2.1 6.6L12 15.6 6.4 19l2.1-6.6L3 8.5h6.7L12 2z" stroke="white" stroke-width="1.4" opacity=".95"/>
+          </svg>
+        </div>
+        <div class="brand-title">
+          <strong>Support Center</strong>
+          <span>Mert Alp • App Support</span>
         </div>
       </div>
 
       <div class="pill">
-        <span class="dot"></span>
-        Premium Support • Response via email
+        <span class="mono">mertalp010@gmail.com</span>
       </div>
     </div>
 
-    <div class="hero">
-      <h1>Need help? We’ve got you.</h1>
-      <p>
-        This is the official support center for our apps. If you have any questions,
-        bug reports, or billing issues, reach us anytime — we’ll reply as soon as possible.
-      </p>
-
-      <div class="ctaRow">
-        <a class="btn primary" href="mailto:mertalp010@gmail.com">
-          Contact Support <small>mertalp010@gmail.com</small>
-        </a>
-        <a class="btn" href="apps/smart-gallery-cleaner/privacy.html">Privacy</a>
-        <a class="btn" href="apps/smart-gallery-cleaner/terms.html">Terms</a>
-        <a class="btn" href="apps/smart-gallery-cleaner/ads.html">Ads</a>
-      </div>
-
-      <div class="divider"></div>
-      <p style="margin-top:10px; font-size:12px; color: var(--muted2);">
-        Tip: Include your device model + iOS version + screenshots when contacting support.
-      </p>
-    </div>
-
-    <div class="sectionTitle">
-      <h2>Supported Apps</h2>
-      <p>Pick an app to access its support links</p>
-    </div>
-
-    <div class="grid">
-      <!-- Smart Gallery Cleaner -->
-      <div class="card">
-        <img class="appLogo" src="assets/logo-smart-gallery-cleaner.png" alt="Smart Gallery Cleaner Logo" />
-        <div class="appInfo">
-          <h3>Smart Gallery Cleaner</h3>
+    <header class="hero card" role="banner">
+      <div class="hero-inner">
+        <div style="padding: 4px 2px;">
+          <h1>Need help?</h1>
           <p>
-            Help with cleaning, duplicates, storage tips, and premium access questions.
-            For faster support, share screenshots in your email.
+            For any questions, bug reports, billing issues, or feature requests,
+            please contact us by email. We typically respond within a reasonable timeframe.
           </p>
         </div>
-        <div class="actions">
-          <a class="mini" href="mailto:mertalp010@gmail.com?subject=Support%20-%20Smart%20Gallery%20Cleaner">Email</a>
-          <a class="mini" href="apps/smart-gallery-cleaner/privacy.html">Privacy</a>
-          <a class="mini" href="apps/smart-gallery-cleaner/terms.html">Terms</a>
+
+        <!-- MAIN: Support email foreground -->
+        <div class="support-card card" aria-label="Support email">
+          <div class="label"><span class="dot"></span> Primary support channel</div>
+
+          <div class="mailto">
+            <div class="mailto-left">
+              <div class="addr">mertalp010@gmail.com</div>
+              <div class="hint">Tap to email us (recommended)</div>
+            </div>
+
+            <div class="btns">
+              <a class="btn primary" href="mailto:mertalp010@gmail.com?subject=App%20Support%20Request">
+                <!-- icon -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6h16v12H4V6z" stroke="white" stroke-width="1.6" opacity=".95"/>
+                  <path d="M4 7l8 6 8-6" stroke="white" stroke-width="1.6" opacity=".95"/>
+                </svg>
+                Email Support
+              </a>
+              <button class="btn" id="copyBtn" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 9h11v11H9V9z" stroke="white" stroke-width="1.6" opacity=".9"/>
+                  <path d="M4 4h11v11H4V4z" stroke="white" stroke-width="1.6" opacity=".55"/>
+                </svg>
+                Copy Email
+              </button>
+            </div>
+          </div>
+
+          <div class="muted" style="font-size:12px; line-height:1.6;">
+            Please include: <span class="mono">app name</span>, <span class="mono">device model</span>, <span class="mono">iOS version</span>,
+            and a short description of the issue. Screenshots help a lot.
+          </div>
         </div>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Support guidelines">
+      <div class="info card">
+        <h2>What we can help with</h2>
+        <ul>
+          <li>App issues & bug reports</li>
+          <li>Subscription / purchase questions</li>
+          <li>Account or restore purchase guidance</li>
+          <li>Feedback & feature requests</li>
+        </ul>
       </div>
 
-      <!-- Future apps (copy this card) -->
-      <div class="card" style="opacity:.75">
-        <div class="appLogo" style="display:flex;align-items:center;justify-content:center;">
-          <span style="color:rgba(255,255,255,.7);font-weight:800;">+</span>
-        </div>
-        <div class="appInfo">
-          <h3>Next App</h3>
-          <p>
-            Add your next app logo + name here. Keep everything in one GitHub Pages site.
-          </p>
-        </div>
-        <div class="actions">
-          <span class="mini" style="pointer-events:none; opacity:.65;">Coming Soon</span>
-          <span class="mini" style="pointer-events:none; opacity:.65;">—</span>
-          <span class="mini" style="pointer-events:none; opacity:.65;">—</span>
-        </div>
+      <div class="info card">
+        <h2>Before you email</h2>
+        <ul>
+          <li>Restart the app and try again</li>
+          <li>Make sure you’re on the latest version</li>
+          <li>If it’s a crash, mention what you did right before it happened</li>
+          <li>Attach a screenshot if possible</li>
+        </ul>
       </div>
+    </section>
+
+    <div class="footer" role="contentinfo">
+      <div>© <span id="year"></span> Mert Alp • All rights reserved.</div>
+      <div class="muted">This page is for support only.</div>
     </div>
-
-    <footer>
-      © 2026 Mert Alp • <a href="mailto:mertalp010@gmail.com">mertalp010@gmail.com</a>
-    </footer>
-
   </div>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Copy email
+    const copyBtn = document.getElementById("copyBtn");
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText("mertalp010@gmail.com");
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 9h11v11H9V9z" stroke="white" stroke-width="1.6" opacity=".9"/>
+            <path d="M4 4h11v11H4V4z" stroke="white" stroke-width="1.6" opacity=".55"/>
+          </svg>
+          Copy Email
+        `), 1200);
+      } catch (e) {
+        alert("Copy failed. Please copy manually: mertalp010@gmail.com");
+      }
+    });
+  </script>
 </body>
 </html>
