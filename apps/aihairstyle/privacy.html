@@ -56,6 +56,11 @@
   </p>
 
   <p>
+    Before any image is processed, the App informs the user and obtains explicit consent to process
+    the uploaded photo, including any facial data that may appear in the image, for AI generation purposes.
+  </p>
+
+  <p>
     The App does <strong>not</strong> perform facial recognition and does not identify or verify the identity of any
     individual.
     The App does not create biometric identifiers and does not perform biometric authentication.
@@ -64,12 +69,12 @@
   <p>
     Face data is used solely for generating the hairstyle or hair color result requested by the user and for no other
     purpose.
-    Face data is not used for surveillance, profiling, advertising, or user identification.
+    Face data is not used for surveillance, profiling, advertising, biometric analysis, or user identification.
   </p>
 
   <p>
-    Uploaded images containing faces may be securely transmitted to third-party AI infrastructure
-    to generate the requested image output.
+    Uploaded images containing faces may be securely transmitted to <strong>Google Gemini</strong> or related
+    <strong>Google AI services</strong> solely for the purpose of generating the requested image output.
   </p>
 
   <h3>1.3 Generated Images</h3>
@@ -149,16 +154,18 @@
 
   <p>
     To generate hairstyle and hair color previews, photos uploaded by users may be securely transmitted
-    to third-party AI infrastructure or related AI image processing services.
+    to <strong>Google Gemini</strong> or related <strong>Google AI services</strong> for image analysis and
+    AI-based result generation.
   </p>
 
   <p>
-    These services process images solely to generate the requested hairstyle or hair color output.
-    We do not use uploaded photos for advertising, resale, or unrelated profiling.
+    Only the user-uploaded image and the generation request are sent for this purpose.
+    This data is used solely to generate the requested hairstyle or hair color output.
   </p>
 
   <p>
-    AI processing occurs only after the user explicitly uploads an image and requests generation.
+    AI processing occurs only after the user explicitly selects an image, gives consent,
+    and requests generation inside the App.
   </p>
 
   <hr>
@@ -170,7 +177,7 @@
   </p>
 
   <ul>
-    <li><strong>AI infrastructure services</strong> for hairstyle and hair color image generation</li>
+    <li><strong>Google Gemini / Google AI services</strong> for hairstyle and hair color image generation</li>
     <li><strong>Google Firebase</strong> for Analytics, Crashlytics, and Performance Monitoring</li>
     <li><strong>RevenueCat</strong> for subscription management</li>
   </ul>
@@ -203,9 +210,10 @@
   </p>
 
   <ul>
-    <li>AI services for hairstyle and hair color generation</li>
-    <li>Firebase services for analytics and diagnostics</li>
-    <li>RevenueCat for subscription status handling</li>
+    <li>User-uploaded photos, which may contain face data, are shared with Google Gemini / Google AI services solely to
+      generate the requested hairstyle or hair color result</li>
+    <li>Firebase services receive limited analytics and diagnostics data</li>
+    <li>RevenueCat receives limited subscription-related status information</li>
   </ul>
 
   <p>
@@ -217,9 +225,13 @@
   <h2>6. Data Retention</h2>
 
   <p>
-    Uploaded photos are processed only for generating hairstyle and hair color results and are not permanently stored by
-    us.
-    Images are processed temporarily and deleted after the generation process is completed.
+    Uploaded photos are processed temporarily for generating hairstyle and hair color results.
+    We do not permanently store uploaded photos on our own servers.
+  </p>
+
+  <p>
+    Uploaded photos are retained only for the time necessary to complete processing and deliver the result.
+    After processing is completed, the images are deleted from our systems.
   </p>
 
   <p>
